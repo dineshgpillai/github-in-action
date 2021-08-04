@@ -16,13 +16,14 @@
 package com.db.code.examples.sampledemo.repository;
 
 import com.db.code.examples.sampledemo.model.Employee;
-import org.springframework.data.repository.CrudRepository;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
  * @author Dinesh Pillai
  */
 // tag::code[]
-public interface EmployeeRepository extends CrudRepository<Employee, Long> { // <1>
+public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
 
 }
 // end::code[]
