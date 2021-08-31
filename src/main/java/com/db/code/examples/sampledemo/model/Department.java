@@ -4,6 +4,7 @@ package com.db.code.examples.sampledemo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * @author Dinesh Pillai
@@ -25,6 +26,28 @@ public class Department {
 
     @OneToOne(mappedBy = "department")
     private Employee employee;
+
+    public Department(String name,  String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Department department = (Department) o;
+        return Objects.equals(id, department.id) &&
+                Objects.equals(name, department.name) &&
+                Objects.equals(description, department.description) &&
+                Objects.equals(version, department.version);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name,  description, version);
+    }
 
     public Long getId() {
         return id;

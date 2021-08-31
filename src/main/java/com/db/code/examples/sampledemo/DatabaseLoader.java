@@ -16,6 +16,7 @@
 package com.db.code.examples.sampledemo;
 
 import com.db.code.examples.sampledemo.model.Employee;
+import com.db.code.examples.sampledemo.repository.DepartmentRepository;
 import com.db.code.examples.sampledemo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -29,10 +30,12 @@ import org.springframework.stereotype.Component;
 public class DatabaseLoader implements CommandLineRunner { // <2>
 
     private final EmployeeRepository repository;
+    private final DepartmentRepository deptRepository;
 
     @Autowired // <3>
-    public DatabaseLoader(EmployeeRepository repository) {
+    public DatabaseLoader(EmployeeRepository repository, DepartmentRepository deptRepository) {
         this.repository = repository;
+        this.deptRepository = deptRepository;
     }
 
     @Override
@@ -43,6 +46,11 @@ public class DatabaseLoader implements CommandLineRunner { // <2>
         this.repository.save(new Employee("Samwise", "Gamgee", "gardener"));
         this.repository.save(new Employee("Meriadoc", "Brandybuck", "pony rider"));
         this.repository.save(new Employee("Peregrin", "Took", "pipe smoker"));
+
+        //upload Departments
+
+
+
     }
 }
 // end::code[]
