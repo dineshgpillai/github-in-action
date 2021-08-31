@@ -19,16 +19,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 
 /**
  * @author Dinesh Pillai
  */
 // tag::code[]
 @Entity
+@Table(name="employee")
 public class Employee {
 
     private @Id @GeneratedValue Long id;
@@ -37,6 +35,14 @@ public class Employee {
     private String description;
 
     private @Version @JsonIgnore Long version;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "employee_department",
+            joinColumns =
+                    { @JoinColumn(name = "id", referencedColumnName = "id") },
+            inverseJoinColumns =
+                    { @JoinColumn(name = "department_id", referencedColumnName = "id") })
+    private Department department;
 
     private Employee() {}
 
