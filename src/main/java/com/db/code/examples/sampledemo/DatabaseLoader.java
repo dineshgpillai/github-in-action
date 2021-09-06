@@ -15,6 +15,7 @@
  */
 package com.db.code.examples.sampledemo;
 
+import com.db.code.examples.sampledemo.model.Department;
 import com.db.code.examples.sampledemo.model.Employee;
 import com.db.code.examples.sampledemo.repository.DepartmentRepository;
 import com.db.code.examples.sampledemo.repository.EmployeeRepository;
@@ -48,6 +49,12 @@ public class DatabaseLoader implements CommandLineRunner { // <2>
         this.repository.save(new Employee("Peregrin", "Took", "pipe smoker"));
 
         //upload Departments
+        this.deptRepository.save(new Department("ME", "Middle Earth"));
+        this.deptRepository.save(new Department("MD", "Mordor"));
+        this.deptRepository.save(new Department("RH", "Rohan"));
+
+
+
 
 
 
