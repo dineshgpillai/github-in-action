@@ -1,6 +1,6 @@
 'use strict';
 
-import EmployeeDetail from "./employee.js";
+import { EmployeeDetail } from "./employee.js";
 
 const React = require('react');
 const ReactDOM = require('react-dom');

@@ -9,7 +9,7 @@ const follow = require('./follow'); // function to hop multiple links by "rel"
 
 const root = '/api';
 
-class EmployeeDetail extends React.Component {
+export class EmployeeDetail extends React.Component {
 
 	constructor(props) {
 		super(props);
