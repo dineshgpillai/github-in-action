@@ -51,7 +51,7 @@ public class DatabaseLoader implements CommandLineRunner { // <2>
         //upload Departments
         this.deptRepository.save(new Department("ME", "Middle Earth"));
         this.deptRepository.save(new Department("MD", "Mordor"));
-        this.deptRepository.save(new Department("RH", "Rohan"));
+        this.deptRepository.save(new Department("RH", "Rohanplookikiku"));
 
 
 

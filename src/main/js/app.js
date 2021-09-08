@@ -1,6 +1,7 @@
 'use strict';
 
 import { EmployeeDetail } from "./employee.js";
+import { DepartmentDetail } from "./department.js";
 
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -13,5 +14,6 @@ const root = '/api';
 
 ReactDOM.render(
 	<EmployeeDetail />,
+	<DepartmentDetail />,
 	document.getElementById('react')
 )
